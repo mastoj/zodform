@@ -36,10 +36,10 @@ export const ProfileForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      name: "",
+      someprop: "",
       country: "",
       zipCode: "",
-      // city: "",
+      city: "",
     },
   });
 
@@ -225,7 +225,7 @@ export const ProfileForm = () => {
 
         <FormField
           control={form.control}
-          name="name"
+          name="someprop"
           render={({ field }) => {
             return (
               <FormItem className="flex flex-col">

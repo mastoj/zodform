@@ -46,7 +46,7 @@ export const formSchema = z.object({
     .refine((val) => Object.keys(countries).includes(val), "Invalid country"),
   zipCode: z.string(),
   city: z.string(),
-  name: z.string().min(2).max(50),
+  someprop: z.string().min(2).max(50),
 });
 // .refine(
 //   (val) => {
