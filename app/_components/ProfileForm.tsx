@@ -62,22 +62,22 @@ export const ProfileForm = () => {
 
   const selectedCountry = form.watch("country");
   const zipCodes = countries[selectedCountry]?.zipCodes ?? [];
-  // const zipCode = form.watch("zipCode");
+  const zipCode = form.watch("zipCode");
   const zipCodeToString = ({ code, name }: { code: string; name: string }) =>
     `${code} - ${name}`;
 
-  // useEffect(() => {
-  //   console.log("selectedCountry", selectedCountry);
-  //   console.log("zipCode", zipCode);
-  //   if (!selectedCountry || !zipCode) form.setValue("city", "");
-  //   else {
-  //     form.setValue(
-  //       "city",
-  //       countries[selectedCountry]?.zipCodes.find((zc) => zc.code === zipCode)
-  //         ?.name ?? ""
-  //     );
-  //   }
-  // }, [zipCode, selectedCountry]);
+  useEffect(() => {
+    console.log("selectedCountry", selectedCountry);
+    console.log("zipCode", zipCode);
+    if (!selectedCountry || !zipCode) form.setValue("city", "");
+    else {
+      form.setValue(
+        "city",
+        countries[selectedCountry]?.zipCodes.find((zc) => zc.code === zipCode)
+          ?.name ?? ""
+      );
+    }
+  }, [zipCode, selectedCountry]);
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
