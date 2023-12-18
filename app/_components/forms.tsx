@@ -110,26 +110,7 @@ export const ComboboxField = <
               <Command>
                 <CommandInput placeholder={placeholder} />
                 <CommandEmpty>{emptyText}</CommandEmpty>
-                <CommandGroup>
-                  {itemsComponent(field)}
-                  {/* {zipCodes.map((zc) => (
-                    <CommandItem
-                      value={zc.code}
-                      key={zc.code}
-                      onSelect={() => {
-                        form.setValue("zipCode", zc.code);
-                      }}
-                    >
-                      <Check
-                        className={cn(
-                          "mr-2 h-4 w-4",
-                          zc.code === field.value ? "opacity-100" : "opacity-0"
-                        )}
-                      />
-                      {zipCodeToString(zc)}
-                    </CommandItem>
-                  ))} */}
-                </CommandGroup>
+                <CommandGroup>{itemsComponent(field)}</CommandGroup>
               </Command>
             </PopoverContent>
           </Popover>
