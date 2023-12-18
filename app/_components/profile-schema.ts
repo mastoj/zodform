@@ -47,6 +47,9 @@ export const formSchema = z.object({
   zipCode: z.string(),
   city: z.string(),
   someprop: z.string().min(2).max(50),
+  nestedProp: z.object({
+    someprop2: z.string().min(2).max(50),
+  }),
 });
 // .refine(
 //   (val) => {
